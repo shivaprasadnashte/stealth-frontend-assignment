@@ -1,18 +1,19 @@
-// @ts-nocheck
 "use client";
 import { useRef, useState } from "react";
 import { FaAngleLeft, FaAngleRight, FaPlay, FaPause } from "react-icons/fa";
 
-const videoLinks = [
-  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-];
+type Props = {
+  videoLinks: string[];
+};
 
-const VideoCarousel = () => {
+
+
+const VideoCarousel = ({videoLinks}:Props) => {
+  console.log(videoLinks)
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const videoref: any = useRef(null);
 
   const nextVideo = () => {
     setCurrentVideoIndex((prevIndex) =>
@@ -30,6 +31,9 @@ const VideoCarousel = () => {
 
   const togglePlay = () => {
     const video = videoref.current;
+    if (!video) {
+      return;
+    }
     if (video && typeof video.play === "function") {
       if (video.paused) {
         video.play();
@@ -41,7 +45,6 @@ const VideoCarousel = () => {
     }
   };
 
-  const videoref = useRef(null);
   return (
     <div className="bg-gray-700 rounded-lg w-full h-[600px] relative">
       <div className="absolute inset-0 flex justify-center items-center">
