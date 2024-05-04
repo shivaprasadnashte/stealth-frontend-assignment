@@ -100,7 +100,7 @@ function UserDetails({}: Props) {
             <VideoCarousel videoLinks={user.video_urls} />
           </div>
         </div>
-      ): <div className="w-full h-full flex justify-center items-center">No user found</div>}
+      ): <div className="w-2/3 h-full flex justify-center items-center">Select user found</div>}
     </>
   );
 }
