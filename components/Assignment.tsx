@@ -9,7 +9,7 @@ type Props = {};
 export default function Assignment({}: Props) {
   return (
     <>
-      <div className=" w-1/4 ">
+      <div className="w-1/4 h-full ">
         <div className=" flex mb-2  flex-col gap-1">
           <p className=" text-xs">
             <span className=" text-gray-400">Pages</span>/{" "}
@@ -17,7 +17,7 @@ export default function Assignment({}: Props) {
           </p>
           <p className=" font-bold">Sales BDE</p>
         </div>
-        <div className=" bg-white  shadow-xl p-3 rounded-xl">
+        <div className=" bg-white  h-full shadow-xl p-3 rounded-xl">
           <div className=" flex justify-between py-2 ">
             <p className=" font-bold text-xl">Sales BDE</p>
             <div className=" gap-2 flex">
@@ -47,14 +47,14 @@ export default function Assignment({}: Props) {
             </div>
           </div>
 
-          <div className=" flex gap-3">
-            <div className=" items-center text-sm shadow-xl p-2 w-32 mt-2 border-2 rounded-xl flex gap-2">
+          <div className=" flex my-3 gap-3">
+            <div className=" items-center text-sm shadow-md border-2 p-2 w-32  rounded-md flex gap-2">
               <div>
                 <BsBoxFill />
               </div>
               <div>TO REVIEW</div>
             </div>
-            <div className=" items-center text-sm shadow-xl p-2 w-36 mt-2 border-2 rounded-xl flex gap-2">
+            <div className=" items-center text-sm p-2 w-36  rounded-xl flex gap-2">
               <div>
                 <IoDocumentsSharp />
               </div>
@@ -67,7 +67,7 @@ export default function Assignment({}: Props) {
             <div>SCORE</div>
           </div>
 
-          <div className=" flex flex-col gap-2">
+          <div className=" flex justify-evenly h-full  mt-2 flex-col gap-4">
             <CandidateCard/>
             <CandidateCard/>
             <CandidateCard/>
